@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册成功界面</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .box{
+            width:600px;
+            height:240px;
+            margin:100px auto;
+            background:rgb(197, 245, 123);
+            padding-top:160px;
+            position:relative;
+        }
+        h3{
+            text-align:center;
+            font-size:25px;
+        }
+        p{
+            position:absolute;
+            bottom:20px;
+            right:20px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>恭喜你！注册成功</h3>
+       <p><span id="second">3</span> 秒后将跳转到登录界面···</p>
+    </div>
+</body>
+</html>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script>
+    $(function(){
+        var num=3;
+//       for(var i=5;i>0;i--){
+           setInterval(function(){
+               $("#second").text(num);
+               num--;
+               if(num==0){
+                   window.location.href="login.html";
+               }
+           },1000)
+//       }
+
+    })
+</script>
+
+
+
+
+
+
+

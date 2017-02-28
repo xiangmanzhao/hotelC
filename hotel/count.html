@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="css/count.css">
+    <script src="js/jquery-3.0.0.js"></script>
+    <script>
+        $(function(){
+            //先从cookie中拿到对应的值
+//            然后拆分，得到想要的数据
+            var temp =0;
+            function getCookies(){
+                var obj = [];
+                var $cookies = document.cookie;
+//                console.log($cookies);
+                //深圳富临大酒店=深圳富临大酒店|450|5|images/00007vn7.jpg; 上海虹桥枢纽美居酒店=上海虹桥枢纽美居酒店|650|3|images/00007cEB.jpg
+//                console.log(typeof $cookies); //string
+                //如果没有多个,就没有 ;  indexOf  如果匹配上了,就会返回索引,大于0 ,没有返回-1
+                if($cookies.indexOf(';') != -1){
+                    var arr = $cookies.split(';');//截取多个
+//                    console.log(arr);
+                    //            施华洛世奇（SWAROVSKI）银色泪滴链坠1023992银白色
+                    //                    =施华洛世奇（SWAROVSKI）银色泪滴链坠1023992银白色|488.00|2|imges/521.jpg;
+                    //            施华洛世奇（SWAROVSKI）女士银色对戒5201314银金色=
+                    //                    施华洛世奇（SWAROVSKI）女士银色对戒5201314银金色|520.00|1|imges/520.jpg
+                    for(var i = 0; i < arr.length; i++){
+                        var valArr = arr[i].split('=');
+                        var valArr2 = valArr[1].split('|');//我们想要的值.
+                        var obj2 = new Array();// 定义一个数组 用于存储遍历里面的值.
+
+                        for(var j = 0; j < valArr2.length; j++){
+                            obj2.push(valArr2[j]);//追加数组.
+                        }
+                        obj.push(obj2);//最后把 遍历后的值 塞到 obj对象,并返回出去
+                        //              console.log("------------------------------------------");
+                    }
+
+                } else {
+                    // 否则 只有一条记录
+                    var valArr = $cookies.split('=');
+                    var valArr2 = valArr[1].split('|');//我们想要的值.
+                    var obj2 = new Array();// 定义一个数组 用于存储遍历里面的值.
+
+                    for(var j = 0; j < valArr2.length; j++){
+                        obj2.push(valArr2[j]);//追加数组.
+                    }
+                    obj.push(obj2);//最后把 遍历后的值 塞到 obj对象,并返回出去
+                }
+                return obj;//最后把obj返回出去
+            }
+
+            window.onload=function(){
+                var allObj = getCookies();//拿到cookie里所有的东西
+//                console.log(allObj);
+//                console.log(allObj[1]);
+//                console.log(allObj[0]);
+
+                $("#h_num").val(allObj[0][2]);
+                $("#day").text(allObj[0][2]);
+
+                //遍历拿到的东西
+                for(var i=0;i<allObj.length;i++){
+//                    console.log(allObj[i][0]);
+
+                }
+
+//                房间数量的加减  最多可以预定9间房
+                //点击右边的加号  进行加加  最多可以加到99
+//                console.log($("#jia"));
+                $("#jiaR").on("click",function(){
+                    var num = $("#h_room").val();
+                    num++;
+                    if(num>9){
+                        alert("最多可以预定9间");
+                        num=9;
+                        return;
+                    }
+                    $("#h_room").val(num);
+                    $("#jianshu").text(num);
+//                    console.log("====="+$("#h_num").val());
+                    temp = num * parseInt($("#h_num").val()) * parseInt(allObj[0][1]);
+//                    console.log("temp:"+temp);
+                    $("#total").text(temp);
+                    $(".tjPrice").text(temp);
+                    //                    temp = num*parseInt(allObj[0][1])*
+//                    console.log(num);
+//                    console.log(allObj[0][1]);
+//                     sum = num*450*parseInt(allObj[0][1]);
+////                    console.log(sum);
+//                    $("#total").text(sum);
+
+                    //                var sum=parseInt($("#h_name").text()).num;
+                    //                console.log(sum);
+                    //                $(".gj").text(sum);
+                })
+                //点击减号  先判断如果大于1  那么就可以进行减法，最多可以减到1   否则不可以进行减法计算
+                $("#jianR").on("click",function(){
+                    var num =  $("#h_room").val();
+                    if(num>1){
+                        num--;
+                    }
+                    $("#h_room").val(num);
+                    $("#jianshu").text(num);
+//                    sum = num*450*parseInt(allObj[0][1]);
+//                    $("#total").text(sum);
+                    temp = num * parseInt($("#h_num").val()) * parseInt(allObj[0][1]);
+//                    console.log("temp:"+temp);
+                    $("#total").text(temp);
+                })
+
+                //几晚的点击
+                $("#jia").on("click",function(){
+//                    console.log(parseInt($(this).prev('input').val()) + 1);
+                    var num = parseInt($(this).prev('input').val()) + 1;
+                    $(this).prev('input').val(parseInt($(this).prev('input').val()) + 1);
+                    $("#day").text(parseInt($(this).prev('input').val()));
+                    //每点击一次就要重新计算
+                    temp=num*parseInt(allObj[0][1])*parseInt($("#h_room").val());
+                    console.log(temp);
+                    $("#total").text(temp);
+                    $(".tjPrice").text(temp);
+                })
+
+                $("#jian").on("click",function(){
+                    if(parseInt($(this).next('input').val()) > 1){
+                        var num = parseInt($(this).next('input').val());
+                         $(this).next('input').val(num - 1);
+//                        console.log(num - 1);
+                        //                        console.log($(this).next('input').val(num - 1));
+                       $("#day").text(num-1);
+                        //每点击一次就要重新计算
+//                        var sum=(num-1)*parseInt(allObj[0][1]);
+//                        console.log("yuiouii:"+$("#h_room").val());
+                        temp=(num-1)*parseInt(allObj[0][1])*parseInt($("#h_room").val());
+                        console.log("temp:"+temp);
+                        $("#total").text(temp);
+                        $(".tjPrice").text(temp);
+                    }
+                })
+
+//                $(".ed").on('click', function(){
+//
+//                    if(parseInt($(this).next('input').val()) > 1){
+//
+//                        var num = parseInt($(this).next('input').val());
+//                        $(this).next('input').val(num - 1);
+//
+//                        $(this).parent().next().text(parseInt($(this).parent().prev().text()) * (num - 1) + ".00");
+//                    }
+//                    getTotal();//数量发生了变化,页面上的 " 商品∧总价（不含运费） "的总价应该变化
+//                })
+//                //购物车的 加 数量 +    | 拿到 文本框里当前的值 进行 ++
+//                $(".eo").on('click', function(){
+//
+//                    $(this).prev('input').val(parseInt($(this).prev('input').val()) + 1);
+//                    var num = parseInt($(this).prev('input').val());
+//                    $(this).parent().next().text(parseInt($(this).parent().prev().text()) * (num) + ".00");
+//                    getTotal(); //要计算金额
+//                })
+
+//                计算总金额
+//                function getTotal(){
+//                    //拿到 可以单个单个选的cbx
+//                    var total = 0;
+//                    $('.cbxOrder').each(function(index, eml){
+//                        if($(eml).prop('checked')){
+//                            total += parseInt($('.total').eq(index).text());
+//                        }
+//                    });
+//                    $('.xn').text("¥ " + total + ".00");
+//
+//                    $('#totalEm').text($('.cbxOrder:checked').length);
+//                }
+
+                //计算当前的总金额=当前天数*当前预定的房间数*房间定价
+//                function getTotal(){
+//                    var total =0;
+//                    console.log("====="+allObj[0][1]); //拿到单价
+//                    console.log($("#h_room").val());
+//                    total += allObj[0][0]*$("#h_room").val()*$("#jianshu").text();
+//
+//                }
+//
+//                getTotal();
+
+            }
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="head">
+    <div class="header"></div>
+    <div class="logo">
+        <div class="login_reg">
+            <a href="#">登录</a>
+            <a href="#">免费注册</a>
+        </div>
+        <img src="images/new_logo.png" alt="">
+        <div class="jindu">
+            <div class="fir">1、填写订单</div>
+            <div class="fir">2、选择支付方式</div>
+            <div class="fir">3、完成订单</div>
+        </div>
+    </div>
+</div>
+
+<!--头部结束-->
+
+<!--主体内容-->
+<div class="main">
+    <div class="main_mid">
+        <div class="main_left">
+            <div class="counts">
+               <div class="ydMes">
+                   <h3 class="couH3">预订信息</h3>
+                    <span class="titSpan">
+                            <a href="#">登录</a>
+                            <span>华住会员,预订当前客房最高享</span>
+                            <i>85%</i>
+                    </span>
+               </div>
+
+                <div class="cou_mid">
+                    <div class="dates">
+                        <span>入住日期</span>
+                        <input type="date"/>
+                        <span>退房时间</span>
+                        <input type="date"/>
+                        <!--<span>共 <b>1</b> 晚</span>-->
+                        <a href="javascript:void(0);" class="days jian" id="jian">-</a>
+                        <input type="text" class="days" id="h_num" value="1" style="text-align:center;"/>
+                        <a href="javascript:void(0);" class="days jia" id="jia">+</a>
+                        <span class="days">共 <b class="day" id="day">1</b> 晚</span>
+                        <!--<input type="button" value="确认修改" class="sure"/>-->
+                    </div>
+                    <div class="num">
+                        <span>房间数量</span>
+                        <a href="javascript:void(0);" class="days jian" id="jianR">-</a>
+                        <input type="text" class="days" id="h_room" value="1" style="text-align:center;"/>
+                        <a href="javascript:void(0);" class="days jia" id="jiaR">+</a>
+                        <span class="days">共 <b class="day" id="jianshu">1</b> 间 </span>
+
+                        <!--<select name="rooms" id="" class="seleRoom">-->
+                            <!--<option value="1">1</option>-->
+                            <!--<option value="2">2</option>-->
+                            <!--<option value="3">3</option>-->
+                            <!--<option value="4">4</option>-->
+                            <!--<option value="5">5</option>-->
+                            <!--<option value="6">6</option>-->
+                            <!--<option value="7">7</option>-->
+                            <!--<option value="8">8</option>-->
+                            <!--<option value="9">9</option>-->
+                            <!--<option value="10">10</option>-->
+                        <!--</select>-->
+
+                    </div>
+                    <div class="tatal">
+                        <p>房间总价：￥ <span id="total" style="font-size:18px;color:red;">00.00</span> <span>查看每日房价</span></p>
+                    </div>
+                </div>
+
+                <!--入住信息-->
+                <div class="ydMes ruzhu">
+                    <h3 class="couH3">入住信息</h3>
+                    <!--<span class="titSpan">-->
+                    <!--<a href="#">登录</a>-->
+                    <!--<span>华住会员,预订当前客房最高享</span>-->
+                    <!--<i>85%</i>-->
+                    <!--</span>-->
+                </div>
+
+                <div class="main_sec">
+                    <span>*</span><span>入住人：</span>
+                    <input type="text" placeholder="入住人1"/>
+                    <input type="text" placeholder="入住人2"/>
+                    <input type="text" placeholder="入住人3"/>
+                    <input type="text" placeholder="入住人4" class="three"/>
+                    <input type="text" placeholder="入住人5"/>
+                    <input type="text" placeholder="入住人6"/>
+                    <input type="text" placeholder="入住人7" class="three"/>
+                    <input type="text" placeholder="入住人8"/>
+
+                    <div class="alertMes">
+                        <p>至少填写<span>2</span>名必须与入住时所持有效证件姓名保持一致</p>
+                        <p>请正确填写入住人姓名，当实际入住人与订单入住人不一致时，酒店有权拒绝接待</p>
+                    </div>
+                    <span>手机号码: </span>
+                    <input type="text" placeholder="请输入手机号码"/>
+                    <span>订单提交后，我们会将预订信息发送至您的手机</span>
+                    <br/>
+                    <span>图形验证码: </span>
+                    <input type="text" placeholder="请输入验证码"/><br/>
+                    <span>手机验证码: </span>
+                    <input type="text" placeholder="请输入手机验证码"/>
+
+                </div>
+
+                <!--华住特色-->
+                <div class="ydMes ruzhu">
+                    <h3 class="couH3">华住特色</h3>
+                    <!--<span class="titSpan">-->
+                    <!--<a href="#">登录</a>-->
+                    <!--<span>华住会员,预订当前客房最高享</span>-->
+                    <!--<i>85%</i>-->
+                    <!--</span>-->
+                </div>
+
+                <div class="zong">
+                    <p class="he">
+                        <span>房间总价：￥</span>
+                        <span class="tjPrice" style="font-size:18px;color:red;">108</span>
+                    </p>
+                    <p class="he">
+                        <span>购买早餐：</span>
+                        <span>￥0</span>
+                    </p>
+                    <p class="he">
+                        <span>优惠劵：</span>
+                        <span>￥0</span>
+                    </p>
+
+                </div>
+
+                <div class="tijiao">
+                    <p class="he">订单总价：￥<span class="tjPrice" style="font-size:18px;color:red;">00.00</span></p>
+                    <input type="button" value="提交订单" class="sub"/>
+                </div>
+
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="pic">
+                <img src="images/21z5ht.jpg" alt="" width="310" height="200">
+            </div>
+            <div class="med">
+                <p>床型：<span>无</span></p>
+                <p>面积：<span>无</span></p>
+                <p>窗户：<span>有</span></p>
+                <p>楼层：<span>无</span></p>
+                <p>入住人数：<span>无</span></p>
+                <p>是否无烟：<span>无</span></p>
+                <p>宽带上网：<span>有</span></p>
+            </div>
+
+            <div class="gonggao">
+                <h3>酒店公告</h3>
+                <p>无</p>
+                <p>酒店电话： <span>无</span></p>
+                <p>客服电话： <span>4008-121-121 </span></p>
+            </div>
+
+            <div class="gonggao">
+                <h3>温馨提示</h3>
+                <!--<p>无</p>-->
+                <!--<p>酒店电话： <span>无</span></p>-->
+                <!--<p>客服电话： <span>4008-121-121 </span></p>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--尾部开始-->
+<div class="copyRight">
+    <div class="copyRight_mid">
+        <div class="links">
+            <a href="javascript:;">关于好客汇</a>
+            <a href="javascript:;">酒店加盟</a>
+            <a href="javascript:;">职业招聘</a>
+            <a href="javascript:;">意见反馈</a>
+            <a href="javascript:;">联系我们</a>
+        </div>
+        <p class="copy">沪ICP备12041475 | © 2016 Huazhu All Rights reserved.华住酒店管理有限公司</p>
+    </div>
+</div>
+<!--尾部结束-->
+
+</body>
+</html>

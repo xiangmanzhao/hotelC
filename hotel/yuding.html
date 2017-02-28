@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店预订</title>
+    <link rel="stylesheet" type="text/css" href="css/yuding.css">
+    <link rel="stylesheet" type="text/css" href="css/yuding_wrap.css">
+</head>
+<script src="js/jquery-3.0.0.js"></script>
+
+<body>
+<div class="head">
+    <div class="head_mid">
+        <div class="top">
+            <a href="javascript:;" class="logo"></a>
+            <div class="userInfo">
+                <a href="#" class="name">
+                    <i class="name_icon"></i>
+                    <span class="hello">Hi!张园贵
+                        <i class="diandian"></i>
+                    </span>
+                    <span class="xing"></span>
+                    <i class="up"></i>
+                </a>
+                <a href="#" class="mypointlink">
+                    <i class="money"></i>
+                    <span class="num"> 0</span>
+                </a>
+                <a href="#" class="notice">
+                    <i class="email"></i>
+                    <span class="num"> 9</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="nav">
+        <div class="nav_mid">
+            <ul class="navText">
+                <li>
+                    <a href="#">首页</a>
+                    <a href="#" style="border-bottom:1px solid #fff;">国内酒店预订</a>
+                    <a href="#">国际酒店预订</a>
+                    <a href="#">特卖专区</a>
+                    <a href="#">华住会员</a>
+                    <a href="#">关于好客汇</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--导航结束-->
+
+
+<!--主体部分内容开始-->
+<div class="wrap">
+    <div class="wrap_mid">
+        <!--位置导航-->
+        <div class="addr">
+            <a href="javascript:;" class="indexs">
+                <i class="home"></i>首页
+            </a>
+            <span> > </span>
+            <span>上海酒店</span>
+
+        </div>
+        <div class="search">
+            <div class="search_mid">
+                <div class="city" id="city">
+                    <span class="cityName" style="">城市</span>
+                    <div class="seleCity">
+                        <input type="text" value="上海" class="inputCity" id="inputCity"/>
+                        <span class="jiantou"></span>
+                        <div class="hideCity" id="hideCity">
+                            <p class="sear_text">可以通过热门词汇进行搜索</p>
+                            <div class="ul_city">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">热门</a>
+                                        <a href="javascript:;">ABCD</a>
+                                        <a href="javascript:;">EFGH</a>
+                                        <a href="javascript:;">JKLM</a>
+                                        <a href="javascript:;">NPQR</a>
+                                        <a href="javascript:;">STWX</a>
+                                        <a href="javascript:;">YZ</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">上海</a>
+                                        <a href="javascript:;">北京</a>
+                                        <a href="javascript:;">杭州</a>
+                                        <a href="javascript:;">西安</a>
+                                        <a href="javascript:;">南京</a>
+                                        <a href="javascript:;">天津</a>
+                                        <a href="javascript:;">青岛</a>
+                                        <a href="javascript:;">成都</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">苏州</a>
+                                        <a href="javascript:;">武汉</a>
+                                        <a href="javascript:;">沈阳</a>
+                                        <a href="javascript:;">济南</a>
+                                        <a href="javascript:;">广州</a>
+                                        <a href="javascript:;">重庆</a>
+                                        <a href="javascript:;">大连</a>
+                                        <a href="javascript:;">无锡</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">深圳</a>
+                                        <a href="javascript:;">宁波</a>
+                                        <a href="javascript:;">郑州</a>
+                                        <a href="javascript:;">太原</a>
+                                        <a href="javascript:;">澳门</a>
+                                        <a href="javascript:;">香港</a>
+                                        <a href="javascript:;">台北</a>
+                                        <!--<a href="javascript:;"></a>-->
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--入住时间、-->
+                <div class="data_minddle">
+                    <div class="city in">
+                        <span class="cityName leave" style="">入住日期</span>
+                        <div class="seleCity">
+                            <input type="date" value="2016-09-20" class="inputCity"/>
+                            <span class="jiantou"></span>
+                        </div>
+                    </div>
+                    <div class="city out">
+                        <span class="cityName leave" style="">退访日期</span>
+                        <div class="seleCity">
+                            <input type="date" value="2016-09-22" class="inputCity"/>
+                            <span class="jiantou"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--搜索关键字-->
+                <div class="keyword">
+                    <div class="city keywordFir">
+                        <span class="cityName word" style="">关键字</span>
+                        <div class="seleCity ">
+                            <input type="text" value="" class="inputCity xingzhen"  placeholder="酒店名称或者行政区域"/>
+                            <!--<span class="jiantou"></span>-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--搜索框-->
+                <div class="btnSearch">
+                    <a href="#" class="btna btn1">搜索</a>
+                    <a href="#" class="btna">地图搜索</a>
+                </div>
+            </div>
+        </div>
+        <!--中间第二部分开始-->
+        <div class="secondMain">
+            <div class="smTop">
+                <span class="place">位置</span>
+                <span class="place">不限</span>
+                <div class="plTypes">
+                    <span class="addrs active">商圈</span>
+                    <span class="addrs">行政区</span>
+                    <span class="addrs">地铁沿线</span>
+                </div>
+            </div>
+            <!--<div class="container">-->
+                <div class="content">
+                    <div class="firContent selected">
+                        <i class="firI"></i>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                        </p>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>新国际（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                            <input type="checkbox"/><span>迪士尼（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <!--<input type="checkbox"/><span>新国际（3）</span>-->
+                        </p>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>虹桥地区（31）</span>
+                            <input type="checkbox"/><span>新国际（13）</span>
+                            <input type="checkbox"/><span>北外滩（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <!--<input type="checkbox"/><span>虹桥地区（13）</span>-->
+                        </p>
+                    </div>
+                    <div class="firContent">
+                        <i class="firI secI"></i>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                        </p>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>虹桥地区（31）</span>
+                            <input type="checkbox"/><span>新国际（13）</span>
+                            <input type="checkbox"/><span>北外滩（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <!--<input type="checkbox"/><span>虹桥地区（13）</span>-->
+                        </p>
+                    </div>
+                    <div class="firContent">
+                        <i class="firI thirdI"></i>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                        </p>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>新国际（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <input type="checkbox"/><span>新国际（3）</span>
+                            <input type="checkbox"/><span>迪士尼（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <input type="checkbox"/><span>虹桥地区（13）</span>
+                            <!--<input type="checkbox"/><span>新国际（3）</span>-->
+                        </p>
+                        <p class="dizhis">
+                            <input type="checkbox"/><span>虹桥地区（31）</span>
+                            <input type="checkbox"/><span>新国际（13）</span>
+                            <input type="checkbox"/><span>北外滩（3）</span>
+                            <input type="checkbox"/><span>虹桥枢纽（45）</span>
+                            <input type="checkbox"/><span>北外滩（21）</span>
+                            <input type="checkbox"/><span>迪士尼（31）</span>
+                            <!--<input type="checkbox"/><span>虹桥地区（13）</span>-->
+                        </p>
+                    </div>
+
+                </div>
+        </div>
+        <!--中间第二部分结束-->
+
+        <!--//品牌-->
+        <div class="pinpai">
+            <span class="paizi">品牌</span>
+            <div class="pinpais">
+                <span class="buxian">不限</span>
+                <p class="dizhis pinpaiTypes" id="firType">
+                    <label for=""> <input type="checkbox"/><span>漫心</span></label>
+                    <label for=""><input type="checkbox"/><span>美居</span></label>
+                    <label for=""><input type="checkbox"/><span>全季</span></label>
+                    <label for=""><input type="checkbox"/><span>星程</span></label>
+                    <label for=""><input type="checkbox"/><span>新品汉庭</span></label>
+                    <label for=""> <input type="checkbox"/><span>汉庭</span></label>
+                    <label for=""><input type="checkbox"/><span>宜必思</span></label>
+                    <label for=""><input type="checkbox"/><span>伊莱</span></label>
+                    <label for=""><input type="checkbox"/><span>海友</span></label>
+                </p>
+                <p class="dizhis pinpaiTypes">
+                    <label for=""><input type="checkbox"/><span>新品汉庭</span></label>
+                    <label for=""><input type="checkbox"/><span>汉庭</span></label>
+                    <label for=""><input type="checkbox"/><span>宜必思</span></label>
+                    <label for=""><input type="checkbox"/><span>伊莱</span></label>
+                    <label for=""><input type="checkbox"/><span>海友</span></label>
+                </p>
+            </div>
+        </div>
+        <!--//价格-->
+        <div class="price">
+            <span class="paizi">价格</span>
+            <div class="">
+                <span class="buxian">不限</span>
+                <p class="showPrice" >
+                    <label for=""> <input type="checkbox"/><span>￥150以下</span></label>
+                    <label for=""><input type="checkbox"/><span>￥150-300</span></label>
+                    <label for=""><input type="checkbox"/><span>￥301-450</span></label>
+                    <label for=""><input type="checkbox"/><span>￥451-600</span></label>
+                    <label for=""><input type="checkbox"/><span>￥600以上</span></label>
+                </p>
+            </div>
+        </div>
+
+        <!--第三部分开始-->
+        <div class="thirdMain">
+            <div class="mesLeft">
+                <div class="currentCity">
+                    <p>`当前城市，为您找到 <span>429</span>家酒店</p>
+                </div>
+                <div class="paixu">
+                    <strong>默认排序</strong>
+                    <div class="pxPrice">
+                        <span>价格</span>
+                    </div>
+                    <div class="pinglun">
+                        <span>评论</span>
+                    </div>
+                </div>
+
+                <!--各个酒店展示开始-->
+                <div class="h_list">
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                            <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">1</span>
+                                            上海虹桥枢纽美居酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" id="firp4">
+                                        <span>地图</span>
+                                        <span>美景</span>
+                                        <!--<a href="#" class="dingwei"></a>-->
+                                        <!--<a href="#">地图</a>-->
+                                        <!--<a href="#" class="meijing"></a>-->
+                                        <!--<a href="#">美景</a>-->
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">50</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+           <!--<a href="car.html?name=施华洛世奇（SWAROVSKI）银色泪滴链坠1023992银白色&price=488&img=521.jpg"></a>-->
+                                        <a href="detail.html?name=上海虹桥枢纽美居酒店&price=50&img=00007cEB.jpg">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第一个结束、-->
+
+                    <!--第二个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">2</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" id="firp4">
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                        <!--<a href="#" class="dingwei"></a>-->
+                                        <!--<a href="#">地图</a>-->
+                                        <!--<a href="#" class="meijing"></a>-->
+                                        <!--<a href="#">美景</a>-->
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">450</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="detail.html?name=深圳富临大酒店&price=450&img=00007vn7.jpg">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--第三个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">3</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" id="firp4">
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">580</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第三个结束-->
+
+                    <!--第四个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">4</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" id="firp4">
+                                       <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">180</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第四个结束-->
+                    <!--第五个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">5</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" id="firp4">
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">299</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第五个结束-->
+
+                    <!--第六个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">6</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">465</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第六个结束-->
+                    <!--第七个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">7</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">259</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第七个结束-->
+
+                    <!--第八个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">8</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">199</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第八个结束-->
+                    <!--第九个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">9</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4">
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">279</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="#">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第九个结束-->
+
+                    <!--第十个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">10</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">370</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第十个结束-->
+                    <!--第十一个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007cEB.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">11</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">289</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="javascript:;">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第十一个结束-->
+
+                    <!--第十二个展示-->
+                    <div class="h_item">
+                        <div class="h_info">
+                            <div class="picImg">
+                                <a href="javascript:;"><img src="images/00007vn7.jpg" alt="深圳福林大酒店"></a>
+                            </div>
+                            <div class="h_info_text">
+                                <!--基本信息-->
+                                <div class="info_base">
+                                    <p class="firp1">
+                                        <a href="javascript:;" class="spanleft">
+                                            <span class="span_icon">12</span>
+                                            深圳富临大酒店
+                                        </a>
+                                        <i class="huguang"></i>
+                                        <b class="xingji"></b>
+                                    </p>
+                                    <p class="firp2">
+                                        距离<span class="zhanbie">深圳站</span>大约<span class="kms">0.2</span>公里
+                                    </p>
+                                    <div class="tblinks">
+                                        <p class="firp3">
+                                            <a href="javascript:;" class="one"></a>
+                                            <a href="javascript:;" class="two"></a>
+                                            <a href="javascript:;" class="third"></a>
+                                            <a href="javascript:;" class="four"></a>
+                                            <a href="javascript:;" class="five"></a>
+                                            <a href="javascript:;" class="cuxiao">促</a>
+                                        </p>
+                                    </div>
+                                    <p class="firp4" >
+                                        <span class="map1">
+                                            <a href="javascript:;" class="txtTb">地图</a>
+                                            <i class="mapTb"></i>
+                                        </span>
+                                        <span class="map1 map2">
+                                            <a href="javascript:;" class="txtTb">街景</a>
+                                            <i class="mapTb street"></i>
+                                        </span>
+                                    </p>
+
+
+                                </div>
+                                <div class="info_com">
+                                    <a href="javascript:;">
+                                        <span class="h_info_comt_bg">
+                                            <i class="c77">95%</i>
+                                            <i class="c55">好评</i>
+                                        </span>
+                                        <span class="moreCom">
+                                            来自
+                                            <b class="tiaoshu">12341</b>
+                                            条点评
+                                        </span>
+                                    </a>
+                                    <p class="yuding">最新预订：1小时前</p>
+                                </div>
+                                <div class="info_pri">
+                                    <p>
+                                        <a href="javascript:;">
+                                            <span class="c66">￥</span>
+                                            <span class="cPrice">399</span>
+                                            <span class="c55">起</span>
+                                        </a>
+                                    </p>
+                                    <div class="detail">
+                                        <a href="#">查看详情</a>
+                                    </div>
+                                    <div class="h_add_sc">
+                                        <span>
+                                            <i class="icon_add"></i>
+                                            <b>3292</b>
+                                            收藏
+                                            <em>+1</em>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--第12个结束-->
+
+                </div>
+                <!--各个酒店展示结束-->
+
+
+
+            </div>
+            <div class="mesRight">
+                <!--引入百度地图-->
+                <div class="ditu" id="ditu"></div>
+                <div class="rightText">
+                    <div class="firText">
+                        <div style="width:15px;height:15px;position:absolute;top:5px;left:0px;  border-radius:10px;border:1px solid red;float:left;"></div>
+                        <p class="history">您浏览过的酒店</p>
+                        <p class="clear"> X 清除</p>
+                    </div>
+                    <div class="firText secText">
+                        <!--<div style="width:15px;height:15px;position:absolute;top:5px;left:0px;  border-radius:10px;border:1px solid red;float:left;"></div>-->
+                        <p class="history hname">上海虹桥枢纽美居酒店</p>
+                        <p class="clear" style="color:red;">￥ <span class="rightPrice">450</span> 起</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--第三部分结束、-->
+
+    </div>
+</div>
+
+<!--主体部分内容结束-->
+
+
+<!--右边置顶-->
+<div class="zhiding" style="display: none;">
+    <div class="ewma">
+        <img src="images/qrcode.927c66a5.png" alt="" width="100%" height="100%">
+        <i class="arrow"></i>
+    </div>
+    <a href="javascript:;" class="download" id="firA">
+        <i class="dl_icon" id="dl_icon"></i>
+        <span class="txt">
+            下载<br/>APP
+        </span>
+    </a>
+    <a href="javascript:;" class="download" id="secA">
+        <i class="dl_icon fk_icon"></i>
+        <span class="txt">
+            意见<br/>反馈
+        </span>
+    </a>
+    <a href="javascript:;" class="download lastdl">
+        <i class="dl_icon zd_icon"></i>
+        <span class="txt">
+            返回<br/>顶部
+        </span>
+    </a>
+
+</div>
+<!--右边置顶结束-->
+
+<!--尾部开始-->
+<div class="copyRight">
+    <div class="copyRight_mid">
+        <div class="links">
+            <a href="javascript:;">关于好客汇</a>
+            <a href="javascript:;">酒店加盟</a>
+            <a href="javascript:;">职业招聘</a>
+            <a href="javascript:;">意见反馈</a>
+            <a href="javascript:;">联系我们</a>
+        </div>
+        <p class="copy">沪ICP备12041475 | © 2016 Huazhu All Rights reserved.华住酒店管理有限公司</p>
+    </div>
+</div>
+<!--尾部结束-->
+</body>
+</html>
+<script src="js/jquery-3.0.0.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=02d2ed2ce930f96ff02d18d19802c2dd"></script>
+<script src="js/scroll.js"></script>
+<script>
+    $(function(){
+        //        固定搜索栏
+        var srcH = Math.ceil($(".search").offset().top);
+//        console.log("===="+srcH);
+        $(document).scroll(function(){
+            var $scrTop = $(document).scrollTop();
+            if($scrTop >=srcH){
+                $(".search").css("position","fixed").css("top",0);
+                $(".secondMain").css("marginTop","42px");
+            }else{
+                $(".search").css("position","static");
+                $(".secondMain").css("marginTop",0);
+            }
+
+//            当焦点聚集到选择城市的输入框时显示可以选择的城市
+
+//            $("#inputCity").click(function(){
+//                alert(1);
+//                $("#hideCity").show(300);
+//            })
+
+            //    业务逻辑：当滚动条达到一定的滚动值的时候，让右下角的小图标和二维码图标显示，
+            //    点击返回顶部几个字，让滚动条回到最顶部
+            if($scrTop >=500){
+                $(".zhiding").show();
+            }else{
+                $(".zhiding").hide();
+            }
+
+
+
+
+//            window.onscroll= function () {
+//                //第一步首先是调用封装的srcoll() 函数获取到当前的滚动值
+//                var currentTop = srcoll().top;
+//                console.log(currentTop);
+//
+//            };
+            //        固定地图的位置
+//            var dituH = Math.ceil($(".mesRight").offset().top);
+//            console.log(dituH);
+//            if($scrTop >=dituH){
+//                $(".mesRight").css("position","fixed").css("top",42).css("left",930);
+//            }else{
+//                $(".mesRight").css("position","static")
+////                $(".secondMain").css("marginTop","42px");
+//            }
+
+        })
+        //点击返回顶部回到顶部
+        $(".lastdl").on("click",function(){
+//                animate({scrollTop:0});
+            $("body").animate({scrollTop:0});
+        })
+
+    })
+</script>
+<script>
+    //鼠标移入下载，背后的下载APP这几个文字出现
+    $("#firA").mouseenter(function () {
+        $(".ewma").show(600);
+
+        $("#dl_icon").hide().next(".txt").show();
+    })
+    $(".ewma").mouseleave(function(){
+        $(this).hide();
+    })
+    $("#firA").mouseleave(function(){
+        $("#dl_icon").show().next(".txt").hide();
+    })
+
+    $("#secA").mouseenter(function () {
+        $(".fk_icon").hide().next(".txt").show();
+    })
+    $("#secA").mouseleave(function(){
+        $(".fk_icon").show().next(".txt").hide();
+    })
+    $(".lastdl").mouseenter(function () {
+        $(".zd_icon").hide().next(".txt").show();
+    })
+    $(".lastdl").mouseleave(function(){
+        $(".zd_icon").show().next(".txt").hide();
+    })
+
+
+    //    商圈、行政区 地铁沿线切换
+    $(".plTypes .addrs").on("click",function(){
+        $(this).addClass("active").siblings(".addrs").removeClass("active");
+        var $index = $(this).index();
+        $(".content>div").eq($index).addClass("selected").siblings("div").removeClass("selected");
+    })
+
+
+    function getSuccess(position){
+        //        console.log(position);
+        console.log(document.getElementById("#ditu"));
+        var map = new BMap.Map("ditu");
+        var point = new BMap.Point(position.coords.longitude,position.coords.latitude);
+        map.centerAndZoom(point,12);
+
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);
+                map.panTo(r.point);
+                //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            }
+            else {
+                alert('failed'+this.getStatus());
+            }
+        },{enableHighAccuracy: true})
+
+    }
+    function getError(error){
+        console.log(error);
+    }
+    if(navigator.geolocation){
+        //如果浏览器有这个方法 那么继续
+        //            alert("当前浏览器支持");
+        navigator.geolocation.getCurrentPosition(getSuccess,getError,{
+            enableHighAccuracy: true,   //boolean 是否要求高精度的地理信息
+            timeout: 9000,   //表示等待响应的最大时间，默认是0毫秒，表示无穷时间
+            maximumAge: 3000   　//应用程序的缓存时间
+        })
+
+    }else{
+        //否则就提示不支持
+        alert("对不起，您当前的浏览器不支持");
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

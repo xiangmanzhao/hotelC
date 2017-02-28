@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看详情</title>
+    <link rel="stylesheet" type="text/css" href="css/yuding.css">
+    <link rel="stylesheet" type="text/css" href="css/detail.css">
+    <script src="js/jquery-3.0.0.js"></script>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            //首先获取到传过来的地址  当前的路径
+//            var oUrl = window.location.href;
+//            console.log(oUrl);
+//http://localhost:63342/jQueryCourse/hotel/hotel/detail.html?name=%E4%B8%8A%…A2%E7%BA%BD%E7%BE%8E%E5%B1%85%E9%85%92%E5%BA%97&price=450&img=00007cEB.jpg
+//            detail.html?name=上海虹桥枢纽美居酒店&price=450&img=00007cEB.jpg;
+//            截取问号之后的信息就是我们需要的内容
+            var OUrl = window.location.href;//获得的地址
+//            console.log(OUrl);
+            var arrurl = OUrl.split('?');//截取成数组
+//            console.log(arrurl);  //Array[2]
+            var data = arrurl[1].split('&');
+//            console.log(data);//Array[3]
+
+            //遍历数组  拿到对应的值 然后填写到对应的地方
+            for(var i=0;i<data.length;i++){
+                //此时  key=value  例如："name=上海虹桥枢纽美居酒店" "price=450"  "img=00007cEB.jpg"
+                //因此还需要进行拆分
+                var kv = data[i].split("=");
+                //酒店名称  转码
+                if(kv[0] == "name"){
+                    //拿到名称就把这个值给对应的显示的标签
+                    $("#h_name").text(decodeURIComponent(kv[1]));
+                }
+                //酒店预订价格
+                if(kv[0] == "price"){
+                    $("#h_price").text(decodeURIComponent(kv[1]));
+                    $("#h_price2").text(decodeURIComponent(kv[1]));
+                }
+                //酒店对应的展示图
+                if(kv[0] == "img"){
+                    $("#h_showImg").attr("src","images/"+decodeURIComponent(kv[1]));
+                    $("#h_showImg2").attr("src","images/"+decodeURIComponent(kv[1]));
+                }
+            }
+
+//            $(function(){
+//                //左边 贱贱
+//                $(".qt").eq(0).on("click", function(){
+//
+//                    var num = $("#num_").val();
+//                    //如果大于才能 --
+//                    if(num > 1){
+//                        num--;
+//                    }
+//
+//                    $("#num_").val(num);//设置
+//                });
+//            $(".qt").eq(1).on("click", function(){
+//
+//                var num = $("#num_").val();
+//                //如果大于才能 --
+//                num++;
+//                if(num > 99){
+//                    alert("库存不足");
+//                    num = 99;
+//                    return
+//                }
+//                $("#num_").val(num);
+//            })
+
+            //点击右边的加号  进行加加  最多可以加到99
+            console.log($("#jia"));
+            $("#jia").on("click",function(){
+                var num = $("#h_num").val();
+                num++;
+                if(num>99){
+                    alert("最多可以预定99天");
+                    num=99;
+                    return;
+                }
+                $("#h_num").val(num);
+                $(".day").text(num);
+//                var sum=parseInt($("#h_name").text()).num;
+//                console.log(sum);
+//                $(".gj").text(sum);
+            })
+
+
+
+            //点击减号  先判断如果大于1  那么就可以进行减法，最多可以减到1   否则不可以进行减法计算
+            $("#jian").on("click",function(){
+               var num =  $("#h_num").val();
+                if(num>1){
+                    num--;
+                }
+                $("#h_num").val(num);
+                $(".day").text(num);
+            })
+
+//            $(".ey").on("click", function(){
+//                //            e.preventDefault();
+//                //            window.location.href=""
+//                // 我们在跳转的时候, 让当前的数据保存到 cookie,然后在另外一个页面中去获取这些数据.
+//                var $name = $("#name_").text();//名称
+//                var $price = $("#price_").text();//价格
+//                var $num = $("#num_").val();// 数量
+//                var $img = $("#showImage_").attr("src");
+//
+//                //            console.log($img);
+//                var data = $name + "|" + $price + "|" + $num + "|" + $img
+//                setCookie($name, data, 7);
+//
+//            })
+
+            //点击预定把预定酒店的基本信息保存到cookie中
+            $(".yd").on("click",function(){
+                //点击预定进行页面跳转的同时进行把数据保存到cookie
+                var $name= $("#h_name").text();
+                var $price = $("#h_price").text();
+                var $num = $("#h_num").val();
+                var $img = $("#h_showImg2").attr("src");
+                var data = $name + "|" +$price + "|" + $num + "|" +$img;
+                setCookie($name,data,7);
+            })
+
+
+            // 设置cookie
+            function setCookie(key, value, num){
+                //data 天数
+                var date = new Date();
+                date.setDate(date.getDate() + num);
+                document.cookie = "" + key + "=" + value + ";expires=" + date;
+            }
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="head">
+    <div class="head_mid">
+        <div class="top">
+            <a href="javascript:;" class="logo"></a>
+            <div class="userInfo">
+                <a href="#" class="name">
+                    <i class="name_icon"></i>
+                    <span class="hello">Hi!xiangmanzhao
+                        <i class="diandian"></i>
+                    </span>
+                    <span class="xing"></span>
+                    <i class="up"></i>
+                </a>
+                <a href="#" class="mypointlink">
+                    <i class="money"></i>
+                    <span class="num"> 0</span>
+                </a>
+                <a href="#" class="notice">
+                    <i class="email"></i>
+                    <span class="num"> 9</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <div class="nav_mid">
+        <ul class="navText">
+            <li>
+                <a href="index.html">首页</a>
+                <a href="#" style="border-bottom:1px solid #fff;">国内酒店预订</a>
+                <a href="#">国际酒店预订</a>
+                <a href="#">特卖专区</a>
+                <a href="#">华住会员</a>
+                <a href="#">关于好客汇</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--导航结束-->
+
+
+<!--主体内容-->
+<div class="wrap">
+    <div class="wrap_mid">
+        <!--位置导航-->
+        <div class="addr">
+            <a href="javascript:;" class="indexs">
+                <i class="home"></i>首页
+            </a>
+            <span> > </span>
+            <span>上海酒店</span>
+            <span> > </span>
+            <span> 上海虹桥枢纽美居酒店</span>
+        </div>
+        <!--位置导航结束-->
+        <span class="split"></span>
+
+        <!--头部信息-->
+        <div class="titTop">
+            <div class="titLeft">
+                <div>
+                    <h3 class="titH3" id="h_name">上海虹桥枢纽</h3>
+                    <span class="titSpan">专票抵扣 6%</span>
+                </div>
+                <div class="dizhi">上海市长宁区空港一路398号，虹桥机场一号航站楼对面</div>
+                <div class="tubiao"></div>
+            </div>
+            <div class="titRight">
+                <p>
+                    <a href="#">
+                        <span class="c66">￥</span>
+                        <span class="cPrice" id="h_price">450</span>
+                        <span class="c55">起</span>
+                    </a>
+                </p>
+                <span class="like">收藏这家酒店</span>
+            </div>
+        </div>
+        <!--头部信息结束-->
+
+        <!--房间详情-->
+        <div class="room">
+            <!--图片展示-->
+            <div class="pics">
+                <img id="h_showImg" src="images/5tjg0o.jpg.265-265.jpg" alt="" class="imgFir">
+                <div class="imgs">
+                    <a href="#"><img src="images/vkio16.jpg.175-130.jpg" alt=""></a>
+                    <a href="#" class="sec"><img src="images/21z5ht.jpg.175-130.jpg" alt=""></a>
+                    <a href="#"><img src="images/vkio16.jpg.175-130.jpg" alt=""></a>
+                    <a href="#"><img src="images/21z5ht.jpg.175-130.jpg" alt=""></a>
+                    <a href="#" class="sec"><img src="images/vkio16.jpg.175-130.jpg" alt=""></a>
+                    <a href="#"><img src="images/21z5ht.jpg.175-130.jpg" alt=""></a>
+                </div>
+            </div>
+            <!--图片展示结束-->
+            <div class="picRight" style="cursor:pointer;">
+                <img src="images/pic.png" alt="" width="" height="">
+                <!--<p>相关评论</p>-->
+                <!--<p>95%好评 </p>-->
+            </div>
+        </div>
+        <!--房间详情结束-->
+
+        <!--预订房间开始-->
+        <div class="yuding">
+            <div class="ydTitle">
+                <h3 class="links">酒店预订</h3>
+                <h3 class="links">交通位置</h3>
+                <h3 class="links">酒店概况</h3>
+                <h3 class="links">酒店点评</h3>
+            </div>
+            <!--=======-======-->
+            <div class="dates">
+                <span>入住日期</span>
+                <input type="date"/>
+                <span>退房时间</span>
+                <input type="date"/>
+
+                <a href="javascript:void(0);" class="days jian" id="jian">-</a>
+                <input type="text" class="days" id="h_num" value="1" style="text-align:center;"/>
+                <a href="javascript:void(0);" class="days jia" id="jia">+</a>
+                <span class="days">共 <b class="day">1</b> 晚</span>
+                <!--<a href="#" class="zonghe">总计：￥<b class="gj">108</b></a>-->
+                <!--<span class="days" id="zonghe">总计：<b>108</b></span>-->
+                <input type="button" value="确认修改" class="sure"/>
+            </div>
+
+            <div class="roomTypes">
+                <div class="trTitle">
+                    <a href="javascript:;" class="roomTy">房型</a>
+                    <a href="javascript:;" class="cType">床型</a>
+                    <a href="javascript:;" class="brType">早餐</a>
+                    <a href="javascript:;" class="msjType">门市价</a>
+                    <a href="javascript:;" class="rPrice">房价（查看会员价）</a>
+                </div>
+
+                <div class="mes">
+                    <div class="mes_pic">
+                        <img id="h_showImg2" src="images/vkio16.jpg.265-265.jpg" alt="" width="54" height="54">
+                        <h3 class="biaozhun">标准房-双床</h3>
+                        <span class="des">查看详情
+                            <!--<div class="hideDes">-->
+
+                            <!--</div>-->
+                        </span>
+                    </div>
+                    <div class="mesRight">
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">会员价</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span id="h_price2">450</span></a>
+                            <a href="count.html" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">新店7折</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="count.html" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mes">
+                    <div class="mes_pic">
+                        <img src="images/vkio16.jpg.265-265.jpg" alt="" width="54" height="54">
+                        <h3 class="biaozhun">标准房-双床</h3>
+                        <p class="des">查看详情</p>
+                    </div>
+                    <div class="mesRight">
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">会员价</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">新店7折</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mes">
+                    <div class="mes_pic">
+                        <img src="images/vkio16.jpg.265-265.jpg" alt="" width="54" height="54">
+                        <h3 class="biaozhun">标准房-双床</h3>
+                        <p class="des">查看详情</p>
+                    </div>
+                    <div class="mesRight">
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">会员价</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">新店7折</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mes">
+                    <div class="mes_pic">
+                        <img src="images/vkio16.jpg.265-265.jpg" alt="" width="54" height="54">
+                        <h3 class="biaozhun">标准房-双床</h3>
+                        <p class="des">查看详情</p>
+                    </div>
+                    <div class="mesRight">
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">会员价</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">新店7折</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mes">
+                    <div class="mes_pic">
+                        <img src="images/vkio16.jpg.265-265.jpg" alt="" width="54" height="54">
+                        <h3 class="biaozhun">标准房-双床</h3>
+                        <p class="des">查看详情</p>
+                    </div>
+                    <div class="mesRight">
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">会员价</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                        <div class="rTop">
+                            <a href="javascript:;" class="roomTy0">新店7折</a>
+                            <a href="javascript:;" class="roomTy1">双床</a>
+                            <a href="javascript:;" class="cType1">查看</a>
+                            <a href="javascript:;" class="brType1">￥<span style="text-decoration:line-through;">629</span></a>
+                            <a href="javascript:;" class="msjType1">￥<span>450</span></a>
+                            <a href="javascript:;" class="rPrice1 " ><span class="yd">预订</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--预订房间结束-->
+    </div>
+</div>
+
+
+<!--尾部开始-->
+<div class="copyRight">
+    <div class="copyRight_mid">
+        <div class="link">
+            <a href="javascript:;">关于好客汇</a>
+            <a href="javascript:;">酒店加盟</a>
+            <a href="javascript:;">职业招聘</a>
+            <a href="javascript:;">意见反馈</a>
+            <a href="javascript:;">联系我们</a>
+        </div>
+        <p class="copy">沪ICP备12041475 | © 2016 Huazhu All Rights reserved.华住酒店管理有限公司</p>
+    </div>
+</div>
+<!--尾部结束-->
+
+</body>
+</html>

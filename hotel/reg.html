@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册</title>
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+</head>
+<body>
+<div class="wrap">
+    <!--头部开始-->
+    <div class="head">
+        <div class="line"></div>
+        <div class="head_mid">
+            <div class="logo">
+                <img src="images/logo.png" alt="" style="margin-left:20px;">
+            </div>
+            <span class="split1"></span>
+            <h3 class="reg_h3">会员注册</h3>
+            <div class="head_right">
+                <a href="javascript:;">了解更多</a>
+                <i>|</i>
+                <a href="javascript:;">意见反馈</a>
+                <i>|</i>
+                <a href="javascript:;">English</a>
+            </div>
+        </div>
+    </div>
+    <!--头部结束-->
+
+    <!--中间主体内容开始-->
+    <div class="main">
+        <div class="main_mid">
+            <div class="reg_left">
+                <div class="name" id="top">
+                   请输入对应的信息
+                </div>
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        姓&nbsp;名
+                    </span>
+                    <input type="text" placeholder="请填写身份证中的姓名" id="username"/>
+                </div>
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        手机号
+                    </span>
+                    <input type="text" placeholder="可作为登录名" id="tel"/>
+                </div>
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        密&nbsp;码
+                    </span>
+                    <input type="text" placeholder="6~16个字符，区分大小写" id="pwd1"/>
+                </div>
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        确认密码
+                    </span>
+                    <input type="text" placeholder="请再次输入密码" id="pwd2"/>
+                </div>
+                <!--<div class="name">-->
+                    <!--<span>-->
+                        <!--<i>*</i>-->
+                        <!--验证码-->
+                    <!--</span>-->
+                    <!--<input type="text" placeholder="图形验证码"/>-->
+                <!--</div>-->
+                <!--<div class="name yzm1">7 8 3 2</div>-->
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        验证码
+                    </span>
+                    <input type="text" placeholder="图形验证码" class="appYzm" id="tuYzm"/>
+                    <span id="appMa1">4251</span>
+                </div>
+                <div class="name">
+                    <span>
+                        <i>*</i>
+                        验证码
+                    </span>
+                    <input type="text" placeholder="验证码" class="appYzm" id="appYzm"/>
+                    <span id="appMa">点击手机获取验证码</span>
+                </div>
+                <div class="info">
+                    <span>完善信息</span>
+                    <i></i>
+                    <span>（完善信息可以获得更多会员特权）</span>
+                </div>
+                <div class="showInfo">
+                    <div class="name">
+                        <span>
+                            <!--<i>*</i>-->
+                            证件类型
+                        </span>
+                        <select name="types" id="types">
+                            <option value="type1" selected="selected">居民身份证（内宾）</option>
+                            <option value="type1" >护照（内宾）</option>
+                            <option value="type1">台胞证</option>
+                            <option value="type1">往来港澳通行证</option>
+                        </select>
+                    </div>
+                    <div class="name">
+                        <span>
+                            <!--<i>*</i>-->
+                            证件号码
+                        </span>
+                        <input type="text" placeholder="请输入证件号码" id="idNum"/>
+                    </div>
+                    <div class="name">
+                        <span>
+                            <!--<i>*</i>-->
+                            Email
+                        </span>
+                        <input type="text" placeholder="通过验证码后可作为登录名" id="email"/>
+                    </div>
+                </div>
+                <div class="name agree">
+                    <input type="checkbox" checked="checked" class="checkAgree" />
+                    <span class="agreeText">同意</span>
+                    <a href="javascript:void(0)">《华住会会员服务条款》</a>
+                </div>
+                <div class="name login">
+                    <input type="button" value="注册" id="btnReg"/>
+                </div>
+            </div>
+            <!--左边部分结束-->
+            <div class="reg_right">
+                <div class="regR_top">
+                    <span>已是会员,</span>
+                    <a href="login.html">直接登录</a>
+                </div>
+                <div class="join">
+                    <p class="joinP">使用合作网站账号登录</p>
+                    <div class="bot_links">
+                        <a href="javascript:;" class="links_a ">
+                            <i class="icon qq"></i>
+                            QQ登录
+                        </a>
+                        <a href="javascript:;" class="links_a ">
+                            <i class="icon weibo"></i>
+                            微博登录
+                        </a>
+                        <a href="javascript:;" class="links_a zfbPays">
+                            <i class="icon zfbPay"></i>
+                            支付宝登录
+                        </a>
+                        <a href="javascript:;" class="links_a ">
+                            <i class="icon weixin"></i>
+                            微信登录
+                        </a>
+                    </div>
+                </div>
+                <div class="right_bot">
+                    <p class="right_bot_text">您也可以使用航空公司/银行卡快速注册</p>
+                    <a href="javascript:void(0); " class="right_bot_a">合作卡注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中间主体内容结束-->
+    <!--尾部开始-->
+    <div class="copyRight">
+        <div class="copyRight_mid">
+            <div class="links">
+                <a href="javascript:;">关于好客汇</a>
+                <a href="javascript:;">酒店加盟</a>
+                <a href="javascript:;">职业招聘</a>
+                <a href="javascript:;">意见反馈</a>
+                <a href="javascript:;">联系我们</a>
+            </div>
+            <p class="copy">沪ICP备12041475 | © 2016 Huazhu All Rights reserved.华住酒店管理有限公司</p>
+        </div>
+    </div>
+    <!--尾部结束-->
+</div>
+</body>
+</html>
+<script src="js/base.js"></script>
+<script src="js/jquery-3.0.0.js"></script>
+<script>
+    $(function(){
+        /**
+         * 做注册的简单数据校验
+         *
+         */
+        //1、鼠标失去焦点事件  -- 用户名校验
+       //用户名输入框失去焦点时, 检测用户名称只能包含数字、字母、下划线,
+       // 且不能以数字开头，并且长度不小于3位
+
+        //首先获取到提示框  全局变量
+        var $mesBox = $("#top");
+        $("#appMa1").html(getYzm());  //这样在一开始进入页面就刷新图形验证码
+        $("#username").on("blur", function(){
+//            alert(123);
+//            $mesBox.html("请输入用户名");
+            var username = $("#username").val();  //获取用户输入的用户名
+//            console.log(username);
+            var pattern = /^[a-zA-Z_][a-zA-Z0-9_]{2,}/;
+            var isTrue = pattern.test(username);
+            if(isTrue){
+                $mesBox.html("用户名合法").css("color","blue");
+            }else{
+                $mesBox.html("用户名不合法,请重新输入").css("color","red");
+                $(this).val("");  //不合法置空
+            }
+        })
+
+        /**
+         * 第二步验证手机号码
+         * 手机号码必须是纯数字，并且只能以1开头  必须是11位的
+         */
+        $("#tel").on("blur",function(){
+//            alert(1);
+            var tel = $(this).val();
+//            console.log(tel);
+            var pattern = /^1\d{10}$/;
+            var isTrue = pattern.test(tel);
+            if(isTrue){
+                $mesBox.html("手机号码合法").css("color","blue");
+            }else{
+                $mesBox.html("手机号码不合法,请重输").css("color","red");
+                $(this).val("");  //不合法置空
+            }
+        })
+
+        /**
+         *第三部验证密码
+         *  6-16位 区分大小写字母
+         */
+        $("#pwd1").on("blur",function(){
+            //拿到对应的值然后去掉空格
+            var pwd1 = $(this).val().replace(/ /g,"");
+//            alert(pwd1);
+            console.log(pwd1.length);
+            var pattern = /^.{6,16}$/;
+            var isTrue = pattern.test(pwd1);
+            if(isTrue){
+                $mesBox.html("密码合法").css("color","blue");
+            }else{
+                $mesBox.html("密码不合法,请重输").css("color","red");
+                $(this).val("");  //不合法置空
+            }
+        })
+
+        /**
+         * 第四步 验证再次输入的密码  如果输入的密码与前面输入的密码一致
+         *那么就说明是对的  否则请再次输入
+         */
+        $("#pwd2").on("blur", function(){
+            //获取上面输入的密码
+            var pwd1 = $("#pwd1").val().replace(/ /g,"");
+            //获取到当前输入的密码
+            var pwd2 = $(this).val().replace(/ /g,"");
+            if(pwd1 == pwd2){
+                $mesBox.html("密码输入一致").css("color","blue");
+            }else{
+                $mesBox.html("密码输入不一致，请重输").css("color","red");
+                $(this).val("");
+            }
+        })
+
+        /**
+         *第五步验证输入的验证码
+         */
+        //封装一个函数生成随机的四位数的验证码
+        function getYzm(){
+            var str = "";
+            for(var i=0;i<4;i++){
+                str += parseInt(Math.random()*10);
+            }
+            return str;
+        }
+        //点击刷新验证码
+        $("#appMa1").on("click",function(){
+//            alert(111);
+            $("#appMa1").html(getYzm());
+        })
+
+        /**
+         * 第六步 验证输入的验证码  左边输入的验证码要和此时刷新出来的验证码一致
+         */
+        $("#tuYzm").on("blur", function(){
+            var yzmLeft = $(this).val();
+            //???如何动态的获取验证码
+            var yzmRight = $("#appMa1").text();
+//            console.log("我是右边的验证码："+yzmRight);
+            if(yzmLeft==yzmRight){
+                $mesBox.html("验证码正确").css("color","blue");
+            }else{
+                $mesBox.html("验证码错误").css("color","red");
+            }
+
+        })
+
+        /**
+         * 第七步  验证证件号码  先假设只验证身份证号码
+         * 必须是前17为数字  最后一位可以是数字或者是字母
+         */
+        $("#idNum").on("blur", function(){
+//            alert(1);
+            var idNum = $(this).val().replace(/ /g,"");
+            var pattern = /^\d{17}(\d|x)$/;
+            var isTrue = pattern.test(idNum);
+            if(isTrue){
+                $mesBox.html("身份证号码输入合法").css("color","blue");
+            }else{
+                $mesBox.html("身份证号码输入不合法").css("color","red");
+                $(this).val("");
+            }
+        })
+
+        /**
+         * 第八步验证电子邮箱
+         * var str = "zhansan@1000phone.com"
+         var pattern = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+         *
+         电子邮件
+         //xxxx@xxx(.xxx)+
+         */
+        $("#email").on("blur", function(){
+//            alert(1);
+            var email = $(this).val().replace(/ /g,"");
+            var pattern =  /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+            var isTrue = pattern.test(email);
+            if(isTrue){
+                $mesBox.html("电子邮箱输入合法").css("color","blue");
+            }else{
+                $mesBox.html("电子邮箱输入不合法").css("color","red");
+                $(this).val("");
+            }
+        })
+
+
+        //判断是否是勾选了证件类型为居民身份证（内宾）
+        var $aa = $("#types option:selected").text();
+        console.log("我是aa:"+$aa);
+
+
+        //点击注册按钮
+        $("#btnReg").on("click", function(){
+            //点击按钮提交之前先对所有的输入的数据进行判断，如果都满足，那么进行注册
+            //否则就不进行注册  显示提示信息
+            //判断是否已经在同意的复选框中打钩了
+//            if( $(".checkAgree").checked){
+//                alert(123);
+//            }
+
+            //用户名
+            var username = $("#username").val();  //获取用户输入的用户名
+            //            console.log(username);
+            var pattern1 = /^[a-zA-Z_][a-zA-Z0-9_]{2,}/;
+            var isTrue1 = pattern1.test(username);
+            console.log("isTrue1:"+isTrue1);
+            //            //手机号码
+            var tel = $("#tel").val();
+            //            console.log(tel);
+            var pattern2 = /^1\d{10}$/;
+            var isTrue2 = pattern2.test(tel);
+            console.log("isTrue2:"+isTrue2);
+            //密码
+            var pwd1 = $("#pwd1").val().replace(/ /g,"");
+            //            alert(pwd1);
+            console.log(pwd1.length);
+            var pattern3 = /^.{6,16}$/;
+            var isTrue3 = pattern3.test(pwd1);
+            console.log("isTrue3:"+isTrue3);
+
+            //            再次输入的密码
+
+            //身份证号码
+            var idNum = $("#idNum").val().replace(/ /g,"");
+            var pattern4 = /^\d{17}(\d|x)$/;
+            var isTrue4 = pattern4.test(idNum);
+            console.log("isTrue4:"+isTrue4);
+
+            //电子邮件
+            var email = $("#email").val().replace(/ /g,"");
+            var pattern5 =  /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+            var isTrue5 = pattern5.test(email);
+            console.log("isTrue5:"+isTrue5);
+
+            //&&($("#tuYzm").val ==$("#appMa1").text()) &&($("#pwd1").val() == $("#pwd2").val())
+            //&& ($("#appYzm").val!="") && ($(".checkAgree").prop("checked"))  && isTrue4 && isTrue5
+            if(isTrue1 && isTrue2 && isTrue3
+                    && ($(".checkAgree").prop("checked")) ){
+                alert("输入信息合法,注册成功！");
+                //页面跳转
+                window.location.href="reg_success.html";
+
+            }else{
+                alert("输入信息不合法，请核对");
+            }
+
+        })
+
+    })
+</script>

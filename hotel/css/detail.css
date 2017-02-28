@@ -1,0 +1,390 @@
+.wrap{
+    width:100%;
+
+    }
+.wrap_mid{
+    width:1200px;
+    margin:0 auto;
+    height:1254px;
+    /*border:1px solid red;*/
+
+    }
+
+
+    /*位置导航*/
+.addr{
+    width:100%;
+    height:37px;
+    /*background:#aaa;*/
+
+    }
+.indexs{
+    display:inline-block;
+    height:35px;
+    line-height:35px;
+    }
+.home{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    line-height:24px;
+    background:url(../images/bg_hotel_icon.22c03206.png)no-repeat;
+    background-position:-25px 0;
+    margin-top:5px;
+    }
+
+.split{
+    display:block;
+    width:1200px;
+    border:1px solid #ccc;
+    }
+
+.titTop{
+    height:75px;
+    width:100%;
+
+    }
+.titLeft{
+    float:left;
+    width:350px;
+    height:75px;
+    /*border:1px solid #000;*/
+    }
+.titRight{
+    float:right;
+    width:120px;
+    height:45px;
+    /*border:1px solid #000;*/
+    text-align:center;
+    padding:15px;
+    }
+.titH3{
+    width:200px;
+    height:35px;
+    line-height:35px;
+    float:left;
+    }
+.titSpan{
+    float:left;
+    width:90px;
+    height:20px;
+    line-height:20px;
+    background:orange;
+    color:white;
+    margin-top:7.5px;
+    font-size:12px;
+    }
+.dizhi{
+    width:350px;
+    font-size:12px;
+    float:left;
+    }
+.tubiao{
+    float:left;
+    width:100%;
+    height:20px;
+    line-height:20px;
+    /*border:1px solid #000;*/
+    }
+.titRight .c66{
+    font-size:14px;
+    vertical-align: -5px;
+    }
+.titRight .cPrice{
+    font: 30px Arial;
+    color: #F55;
+
+    }
+.titRight .c55{
+    font-size:14px;
+    vertical-align: 2px;
+    color: #F55;
+    }
+.like{
+    display:inline-block;
+    height:25px;
+    line-height:25px;
+    font-size:12px;
+    }
+.room{
+    margin-top:15px;
+    height:270px;
+    /*border:1px solid #000;*/
+    }
+
+.pics{
+    height:270px;
+    width:805px;
+    /*background:#bada55;*/
+    float:left;
+    }
+.pics img:hover{
+    transform: scale(1.05);
+    }
+.picRight{
+    width:370px;
+    height:265px;
+    /*background:gray;*/
+    border:1px solid #ccc;
+    float:right;
+    text-align:center;
+    }
+
+.imgFir{
+    width:265px;
+    height:265px;
+    float:left;
+    }
+.imgs{
+    float:right;
+    width:535px;
+    height:270px;
+    /*background:indianred;*/
+    }
+.imgs a{
+    float:left;
+    }
+.sec{
+    margin-left:5px;
+    margin-right:5px;
+    }
+
+    /*房间预订*/
+.yuding{
+    height:838px;
+    width:100%;
+    margin-top:15px;
+    /*border:1px solid #000;*/
+    }
+.ydTitle{
+    height:44px;
+    line-height:44px;
+    /*background:#cbe;*/
+    }
+.links{
+    width:296px;
+    height:43px;
+    line-height:43px;
+    float:left;
+    text-align:center;
+    font-size:14px;
+    border:1px solid #ccc;
+    }
+
+    /*入住时间*/
+.dates{
+    width:1148px;
+    padding-left:50px;
+    height:55px;
+    line-height:55px;
+    background:gainsboro;
+    }
+.dates input{
+    display:inline-block;
+    height:32px;
+    width:132px;
+    /*border:1px solid #000;*/
+    }
+.dates .days{
+    /*border:1px solid #000;*/
+    display:inline-block;
+    height:28px;
+    line-height:32px;
+    width:70px;
+    }
+.dates .jian,.dates .jia{
+    height:25px;
+    line-height:25px;
+    width:20px;
+    text-align:center;
+    font-size:18px;
+    border:1px solid #aaaaaa;
+    }
+.zonghe{
+    /*border:1px solid #000;*/
+    display:inline-block;
+    height:28px;
+    line-height:32px;
+    margin-right:20px;
+    color:red;
+    }
+    /*#jian,#jia{*/
+    /*display:inline-block;*/
+    /*}*/
+.dates .sure{
+    background:#a51863;
+    color:white;
+    }
+
+.roomTypes{
+    width:1110px;
+    height:738px;
+    margin:0 auto;
+    /*border:1px solid #000;*/
+    }
+.trTitle{
+    height:25px;
+    line-height:25px;
+    /*background:peachpuff;*/
+    }
+.trTitle a{
+    float:left;
+    /*background:#bada55;*/
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    font-size:12px;
+    }
+
+.roomTy{
+    width:194px;
+
+    }
+.cType{
+    width:96px;
+    padding-left:202px;
+    }
+.brType{
+    width:135px;
+    }
+.msjType{
+    width:97px;
+
+    }
+
+.rPrice{
+    width:135px;
+    padding-right:244px;
+    }
+
+.mes{
+    height:130px;
+    width:100%;
+    /*background:khaki;*/
+    }
+.mes_pic{
+    width:194px;
+    height:116px;
+    padding-top:10px;
+    /*border:1px solid #000;*/
+    float:left;
+    }
+.mes_pic img{
+    float:left;
+    }
+.mes_pic img:hover{
+    transform:scale(1.25);
+    }
+.biaozhun{
+    font-size:13px;
+    float:left;
+    width:100px;
+    margin-left:10px;
+    height:30px;
+    line-height:30px;
+    }
+.des{
+    margin-left:10px;
+    font-size:12px;
+    width:100px;
+    float:left;
+    height:20px;
+    line-height:20px;
+    }
+
+.mesRight{
+    float:left;
+    height:130px;
+    width:910px;
+    /*background:green;*/
+    }
+
+.rTop{
+    height:63px;
+    /*background:gainsboro;*/
+    float:left;
+    border-bottom:1px dotted #000;
+    }
+.rTop a{
+    float:left;
+    /*background:blanchedalmond;*/
+    height:63px;
+    line-height:63px;
+    text-align:center;
+    font-size:12px;
+    }
+.roomTy0{
+    width:202px;
+    }
+.roomTy1{
+    width:96px;
+    }
+.cType1{
+    width:135px;
+    /*padding-left:202px;*/
+    }
+.brType1{
+    width:97px;
+    }
+.msjType1{
+    /*width:97px;*/
+    width:135px;
+    }
+.rPrice1{
+    width:244px;
+    /*padding-right:244px;*/
+    }
+.yd{
+    background:#a51863;
+    display:inline-block;
+    width:100px;
+    height:35px;
+    line-height:35px;
+    color:white;
+    }
+
+    /*版权信息*/
+.copyRight{
+    width:100%;
+    height:110px;
+    background: #F6F2F4;
+    border: 1px solid #f3edf0;
+    }
+.copyRight_mid{
+    width:860px;
+    height:80px;
+    /*background: #6666cc;*/
+    margin:0 auto;
+    padding-top:30px;
+    text-align: center;
+    /*border: 1px solid #000;*/
+    }
+.link{
+    margin-bottom: 20px;
+    }
+.link a{
+    font-size:13px;
+    display: inline-block;
+    margin-right: 30px;
+    font-weight: 900;
+    }
+.copy{
+    font-size:10px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

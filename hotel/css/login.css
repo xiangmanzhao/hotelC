@@ -1,0 +1,343 @@
+/*默认样式重置*/
+body, div, dl, dt, dd, ul, ol,
+li, h1, h2, h3, h4, h5, h6, pre,
+code, form, fieldset, legend, input,
+textarea, p, blockquote, th, td, hr,
+button, article, aside, details, figcaption,
+figure, footer, header, menu, nav, section ,div
+{
+    margin: 0;
+    padding: 0;
+}
+ul li,ol li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.wrap{
+    width:100%;
+    height:100%;
+}
+
+/*头部*/
+.head{
+    width:100%;
+    height:99px;
+    background: #F6F2F4;
+    border-bottom: 1px solid #f3edf0;
+
+}
+.head_mid{
+    width:1200px;
+    height:94px;
+    /*background:pink;*/
+    margin:0 auto;
+    position: relative;
+    z-index: 3;
+
+}
+.line{
+    height:4px;
+    background: #a51863;
+}
+
+
+/*主体部分*/
+.main{
+  width:100%;
+    height:560px;
+    background: white;
+}
+.main_mid{
+    width:1200px;
+    height:560px;
+    /*background: #ccc;*/
+    margin:0 auto;
+    position: relative;
+
+}
+.mainLeft{
+    width:750px;
+    height:560px;
+    /*background:#abc;*/
+    float: left;
+    margin-left:45px;
+    background: url("../images/bg_signin_app.png") no-repeat center top;
+}
+.mainRight{
+    float: right;
+    width:380px;
+    height:583px;
+    background: white;
+    position: absolute;
+    right:80px;
+    z-index: 5;
+    top:-50px;
+    border: 1px solid #f3edf0;
+
+}
+.tab{
+    width:380px;
+    height:48px;
+    /*border: 1px solid #000;*/
+
+}
+.tab li{
+    width:188px;
+    height:48px;
+    line-height:48px;
+    text-align: center;
+    float:left;
+    font-weight: 800;
+    border: 1px solid #f3edf0;
+    background: #FAF8F9;
+}
+.tab .active{
+    border:none;
+    background: white;
+}
+.content{
+    width:380px;
+    height:530px;
+    /*background:greenyellow;*/
+}
+.perContent{
+    width:300px;
+    height:470px;
+    /*background:navajowhite;*/
+    padding:30px 40px 30px 40px;
+    float: left;
+    display: none;
+}
+.content .selected{
+    display: block;
+}
+
+.form span{
+    font-size:14px;
+    display: inline-block;
+    margin-right: 30px;
+}
+.texts{
+    width:300px;
+    height:22px;
+    border: 1px solid #F0E6EB;
+    border-radius:5px;
+    margin-top: 15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    position:relative;
+}
+
+.perContent .texts input{
+    display: inline-block;
+    height:24px;
+    border:none;
+    outline: none;
+}
+
+.content .username{
+    /*margin-top:25px;*/
+}
+.bg_uname{
+    /*border: 1px solid #000;*/
+    display: inline-block;
+    width:26px;
+    height:24px;
+    line-height: 24px;
+    background: url(../images/bg_icon_small.png) no-repeat;
+
+    /*margin-top:8px;*/
+    margin-left:15px;
+    vertical-align: middle;
+}
+.perContent .a1{
+    background-position: -25px -200px;
+}
+.perContent .a2{
+    background-position: 0 -250px;
+}
+.perContent .a3{
+    background-position: -25px -250px;
+}
+
+.unameText{
+    display: inline-block;
+    /*border: 1px solid #000;*/
+    width:50px;
+    height:24px;
+    line-height: 24px;
+    font-weight: 900;
+    font-size:13px;
+    text-align: center;
+}
+.content .yzm{
+    width:200px;
+    float: left;
+
+}
+.content .yzm .yzmInput{
+    width:87px;
+
+}
+.ma{
+    width:82px;
+    height:35px;
+    line-height: 35px;
+    /*border: 1px solid #FAF8F9;*/
+    float: left;
+    margin-top: 23px;
+    margin-left:13px;
+    text-align: center;
+    letter-spacing: 5px;
+    cursor: pointer;
+    background: #DFBBCD;
+}
+.btnLogin{
+    width:300px;
+    height:52px;
+    border: 1px solid #f3edf0;
+    margin-top: 15px;
+    background: #7F1F59;
+    font-weight: 900;
+    color:white;
+    font-size:18px;
+    outline: none;
+    cursor: pointer;
+}
+.content p{
+
+    font-size:13px;
+    height:35px;
+    line-height:35px;
+    position: relative;
+}
+.content p span,.content p .reg_login,.content p .arrow{
+    float: left;
+}
+
+.arrow{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    /*vertical-align: middle;*/
+    background: url(../images/bg_icon_small.png)no-repeat;
+    background-position: -274px -6px;
+    position: absolute;
+    top:10px;
+}
+.content p .regit{
+    float: right;
+}
+.join{
+    width:315px;
+    height:132px;
+    margin-top:10px;
+    /*background:#ccc;*/
+}
+.links_a{
+    border: 1px solid #ece8e6;
+    background-color: #faf8f9;
+    display: inline-block;
+    line-height: 24px;
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #666;
+    width: 89px;
+    margin-right: -5px;
+    margin-top: 10px;
+}
+ .icon{
+    width:24px;
+    height:24px;
+    display: inline-block;
+    line-height: 24px;
+    background: url(../images/bg_icon_small.png) no-repeat;
+     vertical-align: middle;
+}
+.join .bot_links .zfbPays{
+    width:99px;
+
+}
+.join .bot_links .zfbPay{
+    background-position: 0 -150px;
+}
+
+.join .bot_links .qq{
+    background-position: 0 -100px;
+}
+.join .bot_links .weibo{
+    background-position: -25px -100px;
+}
+.join .bot_links .weixin{
+    background-position: -25px -150px;
+}
+
+/*错误信息弹框提示*/
+.tishi{
+    /*border:1px solid #000;*/
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    line-height:25px;
+    text-align:center;
+    border: 1px solid #f3edf0;
+    border-radius:5px;
+    font-size:13px;
+    color:blue;
+}
+
+.alert2{
+    width:80px;
+    height:30px;
+    /*background:#FCFAFA;*/
+    position:absolute;
+    top:13px;
+    left:260px;
+}
+.alert3{
+    top:35px;
+    }
+
+/*版权信息*/
+.copyRight{
+    width:100%;
+    height:110px;
+    background: #F6F2F4;
+    border: 1px solid #f3edf0;
+}
+.copyRight_mid{
+    width:860px;
+    height:80px;
+    /*background: #6666cc;*/
+    margin:0 auto;
+    padding-top:30px;
+    text-align: center;
+    /*border: 1px solid #000;*/
+}
+.links{
+    margin-bottom: 20px;
+}
+.links a{
+font-size:13px;
+    display: inline-block;
+    margin-right: 30px;
+    font-weight: 900;
+}
+.copy{
+    font-size:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
